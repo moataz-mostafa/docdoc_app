@@ -13,7 +13,6 @@ class RememberMeWidget extends StatelessWidget {
             Checkbox(
               value: true, // أو متغير من الـ Cubit
               onChanged: (value) {
-// هنا تتحكم في حالة الـ Remember Me
               },
             ),
             Text("Remember Me"),
