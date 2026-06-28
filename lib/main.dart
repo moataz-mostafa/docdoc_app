@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:grade_project/core/helper/cach_helper.dart';
 import 'package:grade_project/core/utils/colors_manager.dart';
-import 'package:grade_project/features/home/presintation/screen/home_screen.dart';
-
 import 'features/splash_screen.dart';
 
-void main() async{
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   await CacheHelper.init();
+
   runApp(const MyApp());
 }
 
@@ -16,15 +17,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         scaffoldBackgroundColor: ColorsManager.white,
       ),
-      debugShowCheckedModeBanner: false,
-
-     // home: HomeScreen(userName:'',),
-
-     home: SplashScreen(),
-
+      home: const SplashScreen(),
     );
   }
 }

@@ -1,7 +1,7 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
-
-import 'onBoarding/screen/onBoarding_screen.dart';
+import 'package:grade_project/core/helper/cach_helper.dart';
+import 'package:grade_project/features/home/presintation/screen/home_screen.dart';
+import 'package:grade_project/features/onBoarding/screen/onBoarding_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -14,13 +14,33 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
+    checkLogin();
+  }
 
-    Timer(const Duration(seconds: 3), () {
+  Future<void> checkLogin() async {
+    await Future.delayed(const Duration(seconds: 3));
+
+    final token = CacheHelper.getToken();
+
+    if (!mounted) return;
+
+    if (token != null && token.isNotEmpty) {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const OnboardingScreen()),
+        MaterialPageRoute(
+          builder: (_) => HomeScreen(
+            userName: "",
+          ),
+        ),
       );
-    });
+    } else {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (_) => const OnboardingScreen(),
+        ),
+      );
+    }
   }
 
   @override
@@ -32,21 +52,17 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Stack(
           alignment: Alignment.center,
           children: [
-            // الخلفية
             Image.asset(
               "assets/images/Group.png",
-              width: size.width * 1.0,
+              width: size.width,
               fit: BoxFit.contain,
             ),
-
-            // اللوجو + النص جنب بعض
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [
                 Image.asset(
                   "assets/icons/Frame.png",
                   width: size.width * 0.15,
-                  fit: BoxFit.contain,
                 ),
                 const SizedBox(width: 12),
                 const Text(
@@ -54,7 +70,6 @@ class _SplashScreenState extends State<SplashScreen> {
                   style: TextStyle(
                     fontSize: 28,
                     fontWeight: FontWeight.bold,
-                    color: Colors.black,
                   ),
                 ),
               ],
