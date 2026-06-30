@@ -17,7 +17,7 @@ class NavBar extends StatefulWidget {
 class _NavBarState extends State<NavBar> {
   int selectedPage = 0;
 
-  final iconList = <IconData>[
+  final iconList = const <IconData>[
     Icons.home_rounded,
     Icons.chat_bubble_outline_rounded,
     Icons.search_rounded,
@@ -25,24 +25,51 @@ class _NavBarState extends State<NavBar> {
     Icons.person_outline_rounded,
   ];
 
-  final List<Widget> screens = [
-    HomeScreen(userName: ''),
-    ChatScreen(),
-    SearchScreen(),
-    CalendarScreen(),
-    ProfileScreen(),
-  ];
+  late final List<Widget> screens;
+
+  @override
+  void initState() {
+    super.initState();
+
+    screens = [
+      const HomeScreen(userName: ''),
+      const ChatScreen(),
+      const SearchScreen(),
+      const CalendarScreen(),
+      const ProfileScreen(),
+    ];
+  }
+
+  void onTabChanged(int index) {
+    if (index == selectedPage) return;
+
+    setState(() {
+      selectedPage = index;
+    });
+  }
+
+  void onFabPressed() {
+    // هنا تقدر تفتح صفحة إضافة (Post / Create / etc)
+    debugPrint("FAB pressed");
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: screens[selectedPage],
+      extendBody: true, // يعطي شكل أجمل مع الـ FAB
+
+      body: IndexedStack(
+        index: selectedPage,
+        children: screens,
+      ),
 
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: onFabPressed,
         child: const Icon(Icons.add),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
+
+      floatingActionButtonLocation:
+      FloatingActionButtonLocation.endDocked,
 
       bottomNavigationBar: AnimatedBottomNavigationBar(
         icons: iconList,
@@ -51,11 +78,8 @@ class _NavBarState extends State<NavBar> {
         notchSmoothness: NotchSmoothness.defaultEdge,
         activeColor: Colors.blue,
         inactiveColor: Colors.grey,
-        onTap: (index) {
-          setState(() {
-            selectedPage = index;
-          });
-        },
+
+        onTap: onTabChanged,
       ),
     );
   }

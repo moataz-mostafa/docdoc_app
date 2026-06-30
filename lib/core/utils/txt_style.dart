@@ -37,5 +37,10 @@ class TxtStyle {
       fontSize: 12,
       color: ColorsManager.black
   );
+  static const TextStyle font18wight300grey =TextStyle(
+      fontWeight: FontWeight.w300,
+      fontSize: 12,
+      color: ColorsManager.grey2
+  );
 
 }

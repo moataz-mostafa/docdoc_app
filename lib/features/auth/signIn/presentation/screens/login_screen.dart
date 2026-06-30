@@ -6,6 +6,7 @@ import 'package:grade_project/features/auth/signIn/logic/login_cubit.dart';
 import 'package:grade_project/features/auth/signIn/logic/login_state.dart';
 import 'package:grade_project/features/auth/register/presentation/widget/divider_widget.dart';
 import 'package:grade_project/features/home/presintation/screen/home_screen.dart';
+import 'package:grade_project/features/layout/nav_bar.dart';
 import '../../../../../core/utils/txt_style.dart';
 import '../../../../../core/widgets/txt_feild.dart';
 import '../widgets/remember_me_widget.dart';
@@ -38,9 +39,7 @@ class SignInScreen extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (_) => HomeScreen(
-                            userName: state.userName,
-                          ),
+                          builder: (_) => NavBar(),
                         ),
                       );
                     } else if (state is LoginErrorState) {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grade_project/core/helper/cach_helper.dart';
 import 'package:grade_project/core/utils/colors_manager.dart';
+import 'features/recommendation/presentation/screens/recommendation_screen.dart';
 import 'features/splash_screen.dart';
 
 void main() async {
@@ -21,7 +22,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: ColorsManager.white,
       ),
-      home: const SplashScreen(),
+      home: RecommendationScreen(),
+      // home: const SplashScreen(),
     );
   }
 }
