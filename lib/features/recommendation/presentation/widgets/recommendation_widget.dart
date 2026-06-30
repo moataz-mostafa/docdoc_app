@@ -11,6 +11,7 @@ class RecommendationWidget extends StatelessWidget {
     final screenHeight = MediaQuery.of(context).size.height;
 
     return Container(
+
       width: screenWidth * 0.9,
       height: screenHeight * 0.18,
       decoration: BoxDecoration(
