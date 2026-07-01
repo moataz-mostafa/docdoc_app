@@ -22,8 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: ColorsManager.white,
       ),
-      home: RecommendationScreen(),
-      // home: const SplashScreen(),
+       home: const SplashScreen(),
     );
   }
 }
