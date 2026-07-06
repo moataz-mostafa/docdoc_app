@@ -31,7 +31,9 @@ class LoginCubit extends Cubit<LoginStates> {
         final String token = auth.data?.token ?? "";
         final String userName = auth.data?.username ?? "";
 
+        // ✅ لازم تحفظ الاثنين
         await CacheHelper.saveToken(token);
+        await CacheHelper.saveUserName(userName);
 
         emit(
           LoginSuccessState(

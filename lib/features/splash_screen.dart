@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grade_project/core/helper/cach_helper.dart';
-import 'package:grade_project/features/home/presintation/screen/home_screen.dart';
+import 'package:grade_project/features/layout/nav_bar.dart';
 import 'package:grade_project/features/onBoarding/screen/onBoarding_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -28,9 +28,7 @@ class _SplashScreenState extends State<SplashScreen> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (_) => HomeScreen(
-            userName: "",
-          ),
+          builder: (_) => const NavBar(),
         ),
       );
     } else {

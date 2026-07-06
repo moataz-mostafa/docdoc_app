@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:grade_project/core/helper/cach_helper.dart';
 import 'package:grade_project/core/utils/colors_manager.dart';
 import 'package:grade_project/core/utils/txt_style.dart';
 import 'package:grade_project/core/widgets/row_see_all.dart';
@@ -9,15 +10,13 @@ import 'package:grade_project/features/home/presintation/widget/doctor_specialit
 import 'package:grade_project/features/home/presintation/widget/doctors_widgets.dart';
 
 class HomeScreen extends StatelessWidget {
-  final String userName;
-
-  const HomeScreen({
-    super.key,
-    required this.userName,
-  });
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+
+    final userName = CacheHelper.getUserName();
+
     return BlocProvider(
       create: (_) => HomeCubit()..getHomeData(),
       child: Scaffold(
@@ -75,13 +74,12 @@ class HomeScreen extends StatelessWidget {
 
                 const SizedBox(height: 15),
 
-                 RowSeeAll(
+                const RowSeeAll(
                   title: "Recommendation Doctor",
                 ),
 
                 const SizedBox(height: 15),
 
-                /// قائمة الأطباء
                 const Expanded(
                   child: DoctorsWidgets(),
                 ),
@@ -93,4 +91,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-

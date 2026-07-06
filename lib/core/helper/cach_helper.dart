@@ -7,6 +7,8 @@ class CacheHelper {
     _pref = await SharedPreferences.getInstance();
   }
 
+  //================ TOKEN ===================
+
   static Future saveToken(String token) async {
     await _pref?.setString('token', token);
   }
@@ -19,12 +21,32 @@ class CacheHelper {
     await _pref?.remove('token');
   }
 
-  // Remember Me
+  //================ USER NAME ===================
+
+  static Future saveUserName(String userName) async {
+    await _pref?.setString('userName', userName);
+  }
+
+  static String getUserName() {
+    return _pref?.getString('userName') ?? "";
+  }
+
+  static Future clearUserName() async {
+    await _pref?.remove('userName');
+  }
+
+  //================ REMEMBER ME ===================
+
   static Future saveRememberMe(bool value) async {
     await _pref?.setBool('rememberMe', value);
   }
 
   static bool getRememberMe() {
     return _pref?.getBool('rememberMe') ?? false;
+  }
+
+  static Future logout() async {
+    await clearToken();
+    await clearUserName();
   }
 }

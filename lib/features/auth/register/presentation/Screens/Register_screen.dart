@@ -17,7 +17,8 @@ class RegisterScreen extends StatelessWidget {
   final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  final TextEditingController passwordConfirmationController = TextEditingController();
+  final TextEditingController passwordConfirmationController =
+      TextEditingController();
   final TextEditingController phoneController = TextEditingController();
   final TextEditingController genderController = TextEditingController();
 
@@ -30,7 +31,7 @@ class RegisterScreen extends StatelessWidget {
           if (state is RegisterSuccessState) {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => HomeScreen(userName:state.userName,)),
+              MaterialPageRoute(builder: (context) => const HomeScreen()),
             );
           } else if (state is RegisterErrorState) {
             ScaffoldMessenger.of(
