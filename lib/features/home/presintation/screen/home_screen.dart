@@ -9,6 +9,10 @@ import 'package:grade_project/features/home/presintation/widget/containor_widget
 import 'package:grade_project/features/home/presintation/widget/doctor_speciality_widget.dart';
 import 'package:grade_project/features/home/presintation/widget/doctors_widgets.dart';
 
+import '../../Specialty/presentation/screens/specialty_screen.dart';
+import '../../recommendation/presentation/screens/recommendation_screen.dart';
+
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -69,13 +73,22 @@ class HomeScreen extends StatelessWidget {
                 const ContainorWidget(),
 
                 const SizedBox(height: 20),
+                RowSeeAll(
+                  title: "Recommendation Doctor",
+                  onClick: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (_)=>const SpecialtyScreen()),);
+                  },
+                ),
 
                 const DoctorSpecialityWidget(),
 
                 const SizedBox(height: 15),
 
-                const RowSeeAll(
+                RowSeeAll(
                   title: "Recommendation Doctor",
+                  onClick: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (_)=>const RecommendationScreen()),);
+                  },
                 ),
 
                 const SizedBox(height: 15),

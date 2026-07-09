@@ -3,9 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grade_project/core/utils/colors_manager.dart';
 import 'package:grade_project/core/utils/txt_style.dart';
 import 'package:grade_project/core/widgets/back_arrow.dart';
-import 'package:grade_project/features/recommendation/logic/recommendation_cubit.dart';
-
 import '../../../../../core/widgets/custom_search_bar.dart';
+import '../../logic/recommendation_cubit.dart';
 import '../widgets/recommendation_widget.dart';
 
 class RecommendationScreen extends StatelessWidget {

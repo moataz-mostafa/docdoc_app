@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:grade_project/features/recommendation/search/logic/search_cubit.dart';
+import 'package:grade_project/features/home/recommendation/search/logic/search_cubit.dart';
 import '../utils/colors_manager.dart';
 import '../utils/txt_style.dart';
 

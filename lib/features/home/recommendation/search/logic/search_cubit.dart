@@ -1,9 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:grade_project/features/recommendation/search/logic/search_state.dart';
+import 'package:grade_project/features/home/recommendation/search/logic/search_state.dart';
 
-import '../../../../core/const/api_const.dart';
-import '../../../../core/helper/cach_helper.dart';
+import '../../../../../core/const/api_const.dart';
+import '../../../../../core/helper/cach_helper.dart';
 import '../data/search_data_model.dart';
 
 

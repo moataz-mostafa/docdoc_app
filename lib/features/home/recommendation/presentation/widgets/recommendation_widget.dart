@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grade_project/core/utils/colors_manager.dart';
 import 'package:grade_project/core/utils/txt_style.dart';
-import 'package:grade_project/features/recommendation/logic/recommendation_cubit.dart';
-import 'package:grade_project/features/recommendation/logic/recommendation_state.dart';
+
+import '../../logic/recommendation_cubit.dart';
+import '../../logic/recommendation_state.dart';
 
 class RecommendationWidget extends StatelessWidget {
   const RecommendationWidget({super.key});

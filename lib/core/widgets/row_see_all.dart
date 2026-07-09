@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:grade_project/core/utils/txt_style.dart';
-import 'package:grade_project/features/recommendation/presentation/screens/recommendation_screen.dart';
-
 class RowSeeAll extends StatelessWidget {
   final String title;
+  final VoidCallback? onClick;
 
   const RowSeeAll({
     super.key,
-    required this.title,
+    required this.title, this.onClick,
   });
 
   @override
@@ -20,14 +19,7 @@ class RowSeeAll extends StatelessWidget {
           style: TxtStyle.font18wight600black,
         ),
         InkWell(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (_) => const RecommendationScreen(),
-              ),
-            );
-          },
+          onTap: onClick,
           child: Text(
             "See All",
             style: TxtStyle.font12wight300blue,

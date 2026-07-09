@@ -1,4 +1,4 @@
-import 'package:grade_project/features/recommendation/search/data/search_data_model.dart';
+import 'package:grade_project/features/home/recommendation/search/data/search_data_model.dart';
 
 abstract class SearchState {}
 
