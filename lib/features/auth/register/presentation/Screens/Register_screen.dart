@@ -6,9 +6,9 @@ import 'package:grade_project/core/widgets/txt_feild.dart';
 import 'package:grade_project/features/auth/register/data/user_model.dart';
 import 'package:grade_project/features/auth/register/logic/register_cubit.dart';
 import 'package:grade_project/features/auth/register/logic/register_states.dart';
-import 'package:grade_project/features/home/presintation/screen/home_screen.dart';
 
 import '../../../../../core/widgets/button_widget.dart';
+import '../../../../home/home/presintation/screen/home_screen.dart';
 import '../widget/divider_widget.dart';
 
 class RegisterScreen extends StatelessWidget {

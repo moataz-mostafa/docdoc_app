@@ -2,8 +2,8 @@ import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grade_project/core/const/api_const.dart';
 import 'package:grade_project/core/helper/cach_helper.dart';
-import 'package:grade_project/features/home/data/home_data_model.dart';
-import 'package:grade_project/features/home/logic/home_state.dart';
+import 'package:grade_project/features/home/home/data/home_data_model.dart';
+import 'package:grade_project/features/home/home/logic/home_state.dart';
 
 class HomeCubit extends Cubit<HomeState> {
   HomeCubit() : super(HomeInitialState());

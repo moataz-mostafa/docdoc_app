@@ -1,4 +1,4 @@
-import 'package:grade_project/features/home/data/home_data_model.dart';
+import 'package:grade_project/features/home/home/data/home_data_model.dart';
 
 class RecommendationState {}
 class RecommendationInitialState extends RecommendationState{}

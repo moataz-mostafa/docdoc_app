@@ -5,7 +5,6 @@ import 'package:grade_project/features/auth/register/presentation/Screens/Regist
 import 'package:grade_project/features/auth/signIn/logic/login_cubit.dart';
 import 'package:grade_project/features/auth/signIn/logic/login_state.dart';
 import 'package:grade_project/features/auth/register/presentation/widget/divider_widget.dart';
-import 'package:grade_project/features/home/presintation/screen/home_screen.dart';
 import 'package:grade_project/features/layout/nav_bar.dart';
 import '../../../../../core/utils/txt_style.dart';
 import '../../../../../core/widgets/txt_feild.dart';

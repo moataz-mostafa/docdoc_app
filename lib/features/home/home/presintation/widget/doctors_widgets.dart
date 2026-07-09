@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grade_project/core/utils/txt_style.dart';
-import 'package:grade_project/features/home/logic/Home_cubit.dart';
-import 'package:grade_project/features/home/logic/home_state.dart';
+import 'package:grade_project/features/home/home/logic/Home_cubit.dart';
+import 'package:grade_project/features/home/home/logic/home_state.dart';
 
 class DoctorsWidgets extends StatelessWidget {
   const DoctorsWidgets({super.key});

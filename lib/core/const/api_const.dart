@@ -5,4 +5,5 @@ class ApiConst {
   static const String home = "${basUrl}/home/index";
   static const String recommendation = "${basUrl}/doctor/index";
   static const String search = "${basUrl}/doctor/doctor-search?name=Finn";
+  static const String specialList = "${basUrl}/specialization/index";
 }

@@ -4,13 +4,13 @@ import 'package:grade_project/core/helper/cach_helper.dart';
 import 'package:grade_project/core/utils/colors_manager.dart';
 import 'package:grade_project/core/utils/txt_style.dart';
 import 'package:grade_project/core/widgets/row_see_all.dart';
-import 'package:grade_project/features/home/logic/Home_cubit.dart';
-import 'package:grade_project/features/home/presintation/widget/containor_widget.dart';
-import 'package:grade_project/features/home/presintation/widget/doctor_speciality_widget.dart';
-import 'package:grade_project/features/home/presintation/widget/doctors_widgets.dart';
+import 'package:grade_project/features/home/home/logic/Home_cubit.dart';
+import 'package:grade_project/features/home/home/presintation/widget/containor_widget.dart';
+import 'package:grade_project/features/home/home/presintation/widget/doctors_widgets.dart';
 
-import '../../Specialty/presentation/screens/specialty_screen.dart';
-import '../../recommendation/presentation/screens/recommendation_screen.dart';
+import '../../../Specialty/presentation/screens/specialty_screen.dart';
+import '../../../recommendation/presentation/screens/recommendation_screen.dart';
+import '../widget/doctor_speciality_widget.dart';
 
 
 class HomeScreen extends StatelessWidget {

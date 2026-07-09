@@ -2,7 +2,7 @@ import 'package:circle_nav_bar/circle_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:grade_project/core/helper/cach_helper.dart';
 import 'package:grade_project/features/chat/presintation/screen/chat_screen.dart';
-import 'package:grade_project/features/home/presintation/screen/home_screen.dart';
+import 'package:grade_project/features/home/home/presintation/screen/home_screen.dart';
 import 'package:grade_project/features/profile/presintation/screen/profile_screen.dart';
 import '../calendr/presintation/screen/calendar_screen.dart';
 
