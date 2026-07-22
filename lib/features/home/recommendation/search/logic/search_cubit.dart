@@ -6,13 +6,18 @@ import '../../../../../core/const/api_const.dart';
 import '../../../../../core/helper/cach_helper.dart';
 import '../data/search_data_model.dart';
 
-
 class SearchCubit extends Cubit<SearchState> {
   SearchCubit() : super(SearchInitialState());
 
   Dio dio = Dio();
 
   Future searchDoctors(String query) async {
+    //  لما يكون فاضي يرجع الدكاترة زي  م كانو
+    if (query.trim().isEmpty) {
+      emit(SearchInitialState());
+      return;
+    }
+
     emit(SearchLoadingState());
 
     try {

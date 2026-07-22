@@ -1,11 +1,33 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:grade_project/features/home/recommendation/search/logic/search_cubit.dart';
-import '../utils/colors_manager.dart';
-import '../utils/txt_style.dart';
+// الاستيراد الصحيح للـ utils بناءً على ملف الـ button المفتوح أمامك
+import 'package:grade_project/core/utils/colors_manager.dart';
+import 'package:grade_project/core/utils/txt_style.dart';
 
-class CustomSearchBar extends StatelessWidget {
-  const CustomSearchBar({super.key});
+class CustomSearchBar extends StatefulWidget {
+  final ValueChanged<String> onSearch; // استقبال دالة البحث من الخارج
+
+  const CustomSearchBar({super.key, required this.onSearch});
+
+  @override
+  State<CustomSearchBar> createState() => _CustomSearchBarState();
+}
+
+class _CustomSearchBarState extends State<CustomSearchBar> {
+  Timer? _debounce;
+
+  void _onSearchChanged(String query) {
+    if (_debounce?.isActive ?? false) _debounce!.cancel();
+    _debounce = Timer(const Duration(milliseconds: 500), () {
+      widget.onSearch(query); // استدعاء الدالة الممررة بعد انتهاء الكتابة بـ 500ms
+    });
+  }
+
+  @override
+  void dispose() {
+    _debounce?.cancel();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,28 +49,30 @@ class CustomSearchBar extends StatelessWidget {
                   width: 22,
                 ),
                 const SizedBox(width: 10),
-
                 Expanded(
                   child: TextField(
+                    style: TxtStyle.font18wight600black,
                     decoration: const InputDecoration(
                       hintText: "Search",
                       border: InputBorder.none,
+                      isDense: true,
+                      contentPadding: EdgeInsets.zero,
                     ),
-                    onChanged: (value) {
-                      context.read<SearchCubit>().searchDoctors(value);
-                    },
+                    onChanged: _onSearchChanged,
                   ),
                 ),
               ],
             ),
           ),
         ),
-
         const SizedBox(width: 10),
-
         InkWell(
           onTap: () {},
-          child: Image.asset('assets/icons/filter.png'),
+          borderRadius: BorderRadius.circular(8),
+          child: Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: Image.asset('assets/icons/filter.png'),
+          ),
         ),
       ],
     );
